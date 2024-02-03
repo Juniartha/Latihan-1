@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+p{
+    font-size: 30px;
+    font-weight: bold;
+}
+.image1 {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.button_yes,
+.button_no {
+    margin-bottom: 10px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3gwZGgxOXN4MjdwZmNzbGs0dWtnNTdjYTR0cXZ6OWZxazVtMnQ4ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c1R3XcUXVWAFy/giphy.gif') center/cover no-repeat;
+    z-index: 1;
+    display: none;
+}
+
+.explode {
+    animation: explode 0.5s ease-out;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+@media (min-width: 600px) {
+    /* Tampilan desktop */
+    .image1 {
+        order: 1;
+    }
+
+    .button-container {
+        order: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Tampilan responsif (HP) */
+    .image1,
+    .button-container {
+        order: 1;
+    }
+}
